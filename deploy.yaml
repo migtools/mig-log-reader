@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: color
-          image: 'quay.io/djwhatle/mig-log-reader:latest'
+          image: 'quay.io/konveyor/mig-log-reader:latest'
           imagePullPolicy: Always
           volumeMounts:
             - mountPath: /var/cache/sa2kubeconfig
@@ -31,7 +31,7 @@ spec:
               value: color
 
         - name: plain
-          image: 'quay.io/djwhatle/mig-log-reader:latest'
+          image: 'quay.io/konveyor/mig-log-reader:latest'
           imagePullPolicy: Always
           volumeMounts:
             - mountPath: /var/cache/sa2kubeconfig
