@@ -1,5 +1,5 @@
 # mig-log-reader
-Tails and collates logs for MTC OpenShift Migrations
+Tails and collates logs for Konveyor OpenShift 3->4 Migrations
 
 ## Usage
 
