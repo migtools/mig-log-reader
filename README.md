@@ -4,7 +4,7 @@ Tails and collates logs for Konveyor OpenShift 3->4 Migrations
 ## Usage
 
 
-1. Deploy into your OpenShift migration namespace
+1. Deploy into your `openshift-migration` namespace
 ```
 oc create -f deploy.yaml
 ```
