@@ -7,5 +7,6 @@ stern "migration-controller|migration-ui|registry|restic|velero" \
 --exclude "level=debug msg=.*s3aws.Stat" \
 --exclude "Found new dockercfg secret" \
 --exclude "Ignoring unrecognized environment variable REGISTRY" \
+--exclude "GET /v2/_catalog?n=5" \
 --since 5s \
 --kubeconfig ${CONFIGPATH} \
