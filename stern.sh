@@ -1,3 +1,4 @@
+#!/bin/bash
 CONFIGPATH=/var/cache/sa2kubeconfig/kubeconfig-${KSUFFIX}
 
 stern "migration-controller|migration-ui|restic|velero" \

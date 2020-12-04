@@ -1,3 +1,4 @@
+#!/bin/bash
 server=https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_PORT_443_TCP_PORT
 ca=$(cat /run/secrets/kubernetes.io/serviceaccount/ca.crt)
 token=$(cat /run/secrets/kubernetes.io/serviceaccount/token)
