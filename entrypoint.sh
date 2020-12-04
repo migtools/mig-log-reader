@@ -1,3 +1,4 @@
+#!/bin/bash
 while true
 do
     echo [$(date --rfc-3339=seconds)] Refreshing log tail...
