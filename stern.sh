@@ -11,6 +11,8 @@ stern -l app.kubernetes.io/part-of=openshift-migration \
 --exclude "No backup locations were ready to be verified" \
 --exclude "Backup cannot be garbage-collected" \
 --exclude "Error checking repository for stale locks" \
+--exclude "Backup has expired" \
+--exclude "error getting backup storage location" \
 --since 5s \
 --all-namespaces \
 --kubeconfig ${CONFIGPATH} \
