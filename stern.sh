@@ -6,7 +6,7 @@ stern -l app.kubernetes.io/part-of=openshift-migration \
 --exclude-container discovery \
 --exclude "watch is too old"  \
 --exclude "Found new dockercfg secret" \
---exclude "backup location named \\\"default\\\" was not found" \
+--exclude "specified default backup location" \
 --exclude "needs to be at least 1 backup location" \
 --exclude "No backup locations were ready to be verified" \
 --exclude "Backup cannot be garbage-collected" \
