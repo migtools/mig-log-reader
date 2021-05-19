@@ -1,4 +1,4 @@
-FROM quay.io/openshift/origin-must-gather:4.5.0 as oc
+FROM quay.io/openshift/origin-must-gather:4.7.0 as oc
 
 FROM openshift/origin-release:golang-1.14 AS builder
 RUN mkdir /go/src/github.com/wercker \
