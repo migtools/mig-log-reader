@@ -13,6 +13,7 @@ stern -l app.kubernetes.io/part-of=openshift-migration \
 --exclude "Error checking repository for stale locks" \
 --exclude "Backup has expired" \
 --exclude "error getting backup storage location" \
+--exclude "There is no existing backup storage location set as default" \
 --since 5s \
 --all-namespaces \
 --kubeconfig ${CONFIGPATH} \
