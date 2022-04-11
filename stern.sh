@@ -1,7 +1,7 @@
 #!/bin/bash
 CONFIGPATH=/var/cache/sa2kubeconfig/kubeconfig-${KSUFFIX}
 
-stern -l app.kubernetes.io/part-of=openshift-migration \
+timeout 3m stern -l app.kubernetes.io/part-of=openshift-migration \
 --color ${STERN_COLOR} \
 --exclude-container discovery \
 --exclude "watch is too old"  \
@@ -16,4 +16,14 @@ stern -l app.kubernetes.io/part-of=openshift-migration \
 --exclude "There is no existing backup storage location set as default" \
 --since 5s \
 --all-namespaces \
+--kubeconfig ${CONFIGPATH} \
+
+timeout 3m stern -l app.kubernetes.io/instance=velero \
+--color ${STERN_COLOR} \
+--since 5s \
+--kubeconfig ${CONFIGPATH} \
+
+timeout 3m stern -l name=restic \
+--color ${STERN_COLOR} \
+--since 5s \
 --kubeconfig ${CONFIGPATH} \
