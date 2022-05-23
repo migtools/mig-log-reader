@@ -5,5 +5,5 @@ do
     # Generate kubeconfig from SA token
     sa2kubeconfig.sh 1> /dev/null;
     # Run stern for 10 minutes then reboot
-    stern.sh;
+    timeout 10m stern.sh;
 done

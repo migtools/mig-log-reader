@@ -16,5 +16,6 @@ COPY stern.sh /usr/bin/stern.sh
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN mkdir -p /var/cache/sa2kubeconfig
 
+USER 65534:65534
 # 1) Convert SA token to kubeconfig, 2) Run log tail
 CMD sa2kubeconfig.sh 1> /dev/null && entrypoint.sh
