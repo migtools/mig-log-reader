@@ -1,0 +1,4 @@
+[submodule "stern"]
+	path = stern
+	url = https://github.com/migtools/stern.git
+	branch = release-1.8
