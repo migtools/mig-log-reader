@@ -12,6 +12,7 @@ COPY --from=builder /workspace/sa2kubeconfig.sh /usr/bin/sa2kubeconfig.sh
 COPY --from=builder /workspace/stern.sh /usr/bin/stern.sh
 COPY --from=builder /workspace/entrypoint.sh /usr/bin/entrypoint.sh
 COPY --from=builder /workspace/stern/stern-linux /usr/bin/stern
+COPY LICENSE /licenses/
 RUN mkdir -p /var/cache/sa2kubeconfig
 
 USER 65534:65534
