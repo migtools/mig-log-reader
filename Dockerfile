@@ -1,6 +1,6 @@
 FROM quay.io/openshift/origin-must-gather:4.7.0 as oc
 
-FROM registry.access.redhat.com/ubi8/go-toolset:1.14.7 AS builder
+FROM registry.access.redhat.com/ubi8/go-toolset:1.23.9-2.1750813114 AS builder
 ENV GOPATH=$APP_ROOT
 RUN mkdir -p $APP_ROOT/src/github.com/wercker
 WORKDIR $APP_ROOT/src/github.com/wercker
