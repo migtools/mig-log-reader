@@ -18,3 +18,10 @@ RUN mkdir -p /var/cache/sa2kubeconfig
 USER 65534:65534
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+
+LABEL \
+        "io.k8s.description"="Migration Toolkit for Containers Log Reader" \
+        "io.k8s.display-name"="Migration Toolkit for Containers" \
+        "io.openshift.tags"="migration" \
+        "summary"="Migration Toolkit for Containers Log Reader" \
+        "io.openshift.maintainer.project"="MIG"
