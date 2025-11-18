@@ -4,7 +4,7 @@ FROM brew.registry.redhat.io/rh-osbs/openshift-golang-builder:rhel_8_golang_1.24
 COPY . /workspace
 RUN mkdir -p /go/src/github.com/wercker/stern/ &&  tar -cf - /workspace/stern/* | tar --strip-components=2 -xvf - -C /go/src/github.com/wercker/stern/ && tar -cf - /workspace/stern/vendor/* | tar --strip-components=2 -xvf - -C /go/src/
 WORKDIR /workspace/stern/
-RUN cd /workspace/stern/ && GO111MODULE=off CGO_ENABLED=0 GOOS=linux go build -mod=readonly -a -ldflags '-extldflags "-static"' -o ./stern-linux
+RUN cd /workspace/stern/ && GO111MODULE=off CGO_ENABLED=1 GOOS=linux go build -mod=vendor -tags strictfipsruntime -a -o ./stern-linux
 
 FROM registry.redhat.io/ubi8/ubi-minimal
 COPY --from=oc /usr/bin/oc /usr/bin/oc
