@@ -9,6 +9,7 @@ WORKDIR $APP_ROOT/src/github.com/wercker/stern
 RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o stern-linux
 
 FROM registry.access.redhat.com/ubi8-minimal:latest
+RUN microdnf upgrade -y python3-urllib3 && microdnf clean all
 COPY --from=oc /usr/bin/oc /usr/bin/oc
 COPY --from=builder /opt/app-root/src/github.com/wercker/stern/stern-linux /usr/bin/stern
 COPY sa2kubeconfig.sh /usr/bin/sa2kubeconfig.sh
