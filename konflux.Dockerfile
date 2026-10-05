@@ -6,7 +6,7 @@ RUN mkdir -p /go/src/github.com/wercker/stern/ &&  tar -cf - /workspace/stern/* 
 WORKDIR /workspace/stern/
 RUN cd /workspace/stern/ && GO111MODULE=off CGO_ENABLED=1 GOOS=linux go build -mod=vendor -tags strictfipsruntime -a -o ./stern-linux
 
-FROM registry.redhat.io/ubi8/ubi-minimal
+FROM registry.redhat.io/ubi9/ubi-minimal
 COPY --from=oc /usr/bin/oc /usr/bin/oc
 COPY --from=builder /workspace/sa2kubeconfig.sh /usr/bin/sa2kubeconfig.sh
 COPY --from=builder /workspace/stern.sh /usr/bin/stern.sh
